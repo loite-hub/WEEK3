@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FANTECH MK853 RGB 混彩多媒體機械式電競鍵盤 | 極致純白 ‧ 線性幾何</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pureWhite: '#ffffff',
+                        offWhite: '#f8f9fa',
+                        cardWhite: '#ffffff',
+                        borderGray: '#e5e7eb',
+                        techSlate: '#0f172a',
+                        techMuted: '#64748b',
+                        accentBlue: '#2563eb',
+                        accentIndigo: '#4f46e5',
+                        accentViolet: '#7c3aed',
+                        accentCyan: '#0891b2'
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #0f172a;
+            overflow-x: hidden;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        /* Technical Grid Paper Effect */
+        .paper-grid {
+            background-image: 
+                linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        .dot-grid {
+            background-image: radial-gradient(rgba(148, 163, 184, 0.3) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Glassmorphism Light Navigation */
+        .glass-nav-light {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+        }
+
+        /* Gradient Linear Borders & Text */
+        .text-gradient-linear {
+            background: linear-gradient(135deg, #1e293b 0%, #4f46e5 50%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-border-box {
+            position: relative;
+            background: #ffffff;
+            border-radius: 1rem;
+        }
+        .gradient-border-box::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 1.05rem;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.4), rgba(226, 232, 240, 0.8), rgba(37, 99, 235, 0.4));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        /* Keyframes for Floating Animation */
+        @keyframes floatMinimal {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(0.5deg); }
+        }
+        .animate-float {
+            animation: floatMinimal 6s ease-in-out infinite;
+        }
+
+        /* Scroll Sequence Animations (IntersectionObserver) */
+        .scroll-phase-1 {
+            opacity: 0;
+            transition: opacity 0.8s ease-out;
+        }
+        .scroll-phase-2 {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .scroll-phase-3 {
+            opacity: 0;
+            transform: scale(0.95) translateY(15px);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-active.scroll-phase-1 { opacity: 1; }
+        .scroll-active.scroll-phase-2 { opacity: 1; transform: translateY(0); }
+        .scroll-active.scroll-phase-3 { opacity: 1; transform: scale(1) translateY(0); }
+
+        /* Custom Hover Cards */
+        .wireframe-card {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .wireframe-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -15px rgba(79, 70, 229, 0.12);
+        }
+
+        /* Minimalist Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f8f9fa; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4f46e5; }
+    </style>
+</head>
+<body class="bg-pureWhite text-techSlate antialiased selection:bg-accentIndigo selection:text-white">
+
+    <!-- Sticky Glassmorphism Light Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav-light transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo with Wireframe Accent -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-lg bg-techSlate text-white flex items-center justify-center font-orbitron font-black text-lg group-hover:bg-accentIndigo transition-colors duration-300 shadow-sm">
+                    F
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-orbitron font-black text-xl tracking-widest text-techSlate">
+                        FANTECH
+                    </span>
+                    <span class="text-[9px] font-mono tracking-widest text-accentIndigo font-semibold">
+                        MK853 // WHITE EDITION
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-10 font-medium text-sm text-techMuted">
+                <a href="#hero" class="hover:text-accentIndigo transition-colors duration-200">首頁</a>
+                <a href="#banner" class="hover:text-accentIndigo transition-colors duration-200">極簡理念</a>
+                <a href="#features" class="hover:text-accentIndigo transition-colors duration-200">核心規格</a>
+                <a href="#switches" class="hover:text-accentIndigo transition-colors duration-200">軸體架構</a>
+            </nav>
+
+            <!-- Nav Action CTA -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#switches" class="px-5 py-2.5 rounded-lg bg-techSlate hover:bg-accentIndigo text-white text-xs font-mono font-bold tracking-wider transition-all duration-300 shadow-sm hover:shadow-md">
+                    BUY NOW ‧ NT$ 1,380
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuBtn" class="md:hidden text-techSlate hover:text-accentIndigo focus:outline-none p-2" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-pureWhite border-t border-borderGray px-6 py-6 space-y-4 shadow-xl">
+            <a href="#hero" class="mobile-link block text-techSlate hover:text-accentIndigo font-medium">首頁</a>
+            <a href="#banner" class="mobile-link block text-techSlate hover:text-accentIndigo font-medium">極簡理念</a>
+            <a href="#features" class="mobile-link block text-techSlate hover:text-accentIndigo font-medium">核心規格</a>
+            <a href="#switches" class="mobile-link block text-techSlate hover:text-accentIndigo font-medium">軸體架構</a>
+            <a href="#switches" class="mobile-link block w-full text-center py-3 bg-techSlate rounded-lg text-white font-mono font-bold text-sm">
+                立即選購 (NT$ 1,380)
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section (100vh Layout) -->
+    <section id="hero" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center paper-grid overflow-hidden">
+        
+        <!-- Geometric Accent Lines & Crosshairs -->
+        <div class="absolute top-28 left-8 text-slate-300 font-mono text-[10px] hidden sm:block pointer-events-none">
+            + SYS.CONFIG // WHITE_SERIES<br/>+ LAT. 24.163 / LONG. 120.640
+        </div>
+        <div class="absolute bottom-12 right-12 text-slate-300 font-mono text-[10px] hidden sm:block pointer-events-none text-right">
+            STRUCTURE: ALUMINUM TOP<br/>LIGHTING: DYNAMIC RGB
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Hero Narrative Text -->
+            <div class="lg:col-span-6 space-y-8 text-center lg:text-left">
+                
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-accentIndigo text-xs font-mono font-medium">
+                    <span class="w-2 h-2 rounded-full bg-accentIndigo animate-pulse"></span>
+                    MINIMALIST WIREFRAME SERIES
+                </div>
+
+                <div class="space-y-3">
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-techSlate leading-none font-sans">
+                        極致純白<br/>
+                        <span class="text-gradient-linear">精準掌控</span>
+                    </h1>
+                    <p class="text-xs font-mono text-accentIndigo tracking-widest uppercase pt-2">
+                        // FANTECH MK853 MECHANICAL GAMING KEYBOARD
+                    </p>
+                </div>
+
+                <p class="text-techMuted text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                    以俐落的極簡幾何語彙，重塑極速電競配備。簡潔外觀融合多媒體金屬旋鈕與全鍵無衝突動態反應，打造兼具生活品味與極致競技效能的俐落桌面。
+                </p>
+
+                <!-- Dual CTA Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#switches" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-techSlate hover:bg-accentIndigo text-white font-mono font-bold text-sm tracking-wider shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 text-center">
+                        <i class="fa-solid fa-cart-shopping mr-2 text-xs"></i> 立即購買 NT$ 1,380
+                    </a>
+                    <a href="#features" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-pureWhite border border-slate-300 text-techSlate font-medium text-sm hover:border-accentIndigo hover:text-accentIndigo transition-all duration-300 text-center shadow-sm">
+                        了解更多特點
+                    </a>
+                </div>
+
+                <!-- Minimalist Key Specs Indicators -->
+                <div class="pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0 text-center lg:text-left font-mono">
+                    <div>
+                        <div class="text-[11px] text-techMuted uppercase tracking-wider">Switch Specs</div>
+                        <div class="text-sm font-bold text-techSlate font-sans mt-0.5">機械青軸 / 紅軸</div>
+                    </div>
+                    <div>
+                        <div class="text-[11px] text-techMuted uppercase tracking-wider">Key Rollover</div>
+                        <div class="text-sm font-bold text-techSlate font-sans mt-0.5">全鍵防鬼鍵</div>
+                    </div>
+                    <div>
+                        <div class="text-[11px] text-techMuted uppercase tracking-wider">Control</div>
+                        <div class="text-sm font-bold text-techSlate font-sans mt-0.5">雙模式旋鈕</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Hero Floating Keyboard Visual Display -->
+            <div class="lg:col-span-6 flex justify-center relative">
+                <div class="relative w-full max-w-lg lg:max-w-none animate-float">
+                    
+                    <!-- Background Soft Linear Glow Shadow -->
+                    <div class="absolute -inset-4 rounded-3xl bg-gradient-to-r from-accentIndigo/10 via-accentBlue/10 to-accentViolet/10 blur-2xl pointer-events-none"></div>
+
+                    <div class="relative rounded-2xl bg-pureWhite border border-slate-200/90 p-3 shadow-2xl overflow-hidden group">
+                        
+                        <!-- Geometric Wireframe Corners Overlay -->
+                        <div class="absolute top-2 left-2 text-[8px] font-mono text-slate-400 pointer-events-none z-10">┌ MK853_TOP_VIEW</div>
+                        <div class="absolute top-2 right-2 text-[8px] font-mono text-slate-400 pointer-events-none z-10">REV 2.0 ┐</div>
+                        <div class="absolute bottom-2 left-2 text-[8px] font-mono text-slate-400 pointer-events-none z-10">└ WHITE_EDITION</div>
+                        <div class="absolute bottom-2 right-2 text-[8px] font-mono text-slate-400 pointer-events-none z-10">FANTECH ┘</div>
+
+                        <!-- Reliable High Quality Mechanical Keyboard Image -->
+                        <div class="w-full h-[340px] sm:h-[400px] overflow-hidden rounded-xl bg-slate-100 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=1200&auto=format&fit=crop" 
+                                 alt="FANTECH MK853 白色電競機械鍵盤" 
+                                 class="w-full h-full object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-700"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/800x500/ffffff/0f172a?text=FANTECH+MK853+WHITE+EDITION';">
+                        </div>
+
+                        <!-- Floating Feature Tag Indicator -->
+                        <div class="absolute bottom-6 right-6 bg-pureWhite/95 border border-slate-200 px-4 py-2.5 rounded-xl backdrop-blur-md shadow-lg flex items-center gap-3 z-10">
+                            <div class="w-3 h-3 rounded-full bg-accentIndigo animate-ping"></div>
+                            <div>
+                                <div class="text-[9px] font-mono text-techMuted uppercase tracking-wider">MULTIMEDIA KNOB</div>
+                                <div class="text-xs font-bold text-techSlate">音量與燈光獨立切換</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Immersive Parallax Banner Section -->
+    <section id="banner" class="relative py-28 bg-offWhite border-y border-slate-200 overflow-hidden dot-grid">
+        
+        <div class="max-w-5xl mx-auto px-4 relative z-10 text-center space-y-6">
+            
+            <div class="inline-block px-3 py-1 rounded border border-accentIndigo/30 bg-indigo-50/50 text-accentIndigo font-mono text-xs tracking-widest">
+                // DESIGN PHILOSOPHY
+            </div>
+
+            <h2 class="text-2xl sm:text-4xl md:text-5xl font-black text-techSlate font-orbitron tracking-tight leading-tight">
+                " PRECISION IN EVERY STROKE.<br/>ELEGANCE IN EVERY DETAIL. "
+            </h2>
+
+            <p class="text-techMuted max-w-2xl mx-auto text-base sm:text-lg font-light leading-relaxed">
+                擺脫傳統電競外觀的沉重刻板印象。MK853 以極簡純白線性結構為基調，融合高質感金屬磨砂面板，將精準機械觸感融入簡約美學之中。
+            </p>
+
+            <div class="pt-6 flex flex-wrap justify-center items-center gap-8 text-techMuted font-mono text-xs tracking-wider border-t border-slate-200/80 max-w-2xl mx-auto">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-square-check text-accentIndigo"></i> HIGH-PRECISION</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-square-check text-accentIndigo"></i> ERGONOMIC REST</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-square-check text-accentIndigo"></i> DYNAMIC LIGHTING</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Core Product Features (Alternating Layout) Section -->
+    <section id="features" class="py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-28">
+        
+        <div class="text-center space-y-3">
+            <span class="text-xs font-mono text-accentIndigo tracking-widest uppercase">// CORE FEATURES</span>
+            <h2 class="text-3xl sm:text-4xl font-black text-techSlate">匠心細節 ‧ 線性純粹特色</h2>
+            <div class="w-12 h-1 bg-accentIndigo mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Feature 1: Left Text / Right Image (Multimedia Knob) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center scroll-phase-2">
+            <div class="lg:col-span-6 space-y-6">
+                <div class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-accentIndigo text-xl shadow-sm">
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-bold text-techSlate">
+                    多媒體旋鈕與 RGB 光彩體驗
+                </h3>
+                <p class="text-techMuted leading-relaxed font-light">
+                    搭載金屬多功能旋鈕，只需按壓即可在「音量調節模式」與「RGB 燈效調整模式」之間靈敏切換。精準控制音樂聲量與燈光閃耀頻率，掌控於指尖之間。
+                </p>
+                <ul class="space-y-3 text-sm text-techSlate font-medium">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentIndigo"></i> 獨立多媒體快捷鍵（一鍵靜音/播放）</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentIndigo"></i> 多階燈效亮度與絢麗速度靈敏設定</li>
+                </ul>
+            </div>
+            <div class="lg:col-span-6">
+                <div class="wireframe-card rounded-2xl bg-pureWhite border border-slate-200 p-3 shadow-lg hover:border-accentIndigo/60 transition-all overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=1000&auto=format&fit=crop" 
+                         alt="多媒體旋鈕與RGB光彩" 
+                         class="w-full h-80 object-cover rounded-xl hover:scale-105 transition-transform duration-500"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/ffffff/0f172a?text=MULTIMEDIA+KNOB+%26+RGB';">
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 2: Right Text / Left Image (Keycaps & Plate) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center scroll-phase-2">
+            <div class="lg:col-span-6 lg:order-2 space-y-6">
+                <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-accentBlue text-xl shadow-sm">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-bold text-techSlate">
+                    懸浮鍵帽與耐用金屬上蓋面板
+                </h3>
+                <p class="text-techMuted leading-relaxed font-light">
+                    嚴選陽極氧化磨砂金屬面板，賦予鍵盤穩固結構剛性與洗鍊質感。懸浮式鍵帽設計不僅使 RGB 透光均勻透亮，更方便日常清潔維護。
+                </p>
+                <ul class="space-y-3 text-sm text-techSlate font-medium">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentBlue"></i> 雙色注塑成型工藝鍵帽，字體清晰不磨損</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentBlue"></i> 質感純白金屬面板，抗刮耐用防指紋</li>
+                </ul>
+            </div>
+            <div class="lg:col-span-6 lg:order-1">
+                <div class="wireframe-card rounded-2xl bg-pureWhite border border-slate-200 p-3 shadow-lg hover:border-accentBlue/60 transition-all overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=1000&auto=format&fit=crop" 
+                         alt="懸浮鍵帽與金屬面板" 
+                         class="w-full h-80 object-cover rounded-xl hover:scale-105 transition-transform duration-500"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/ffffff/0f172a?text=SUSPENDED+KEYCAPS';">
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 3: Left Text / Right Image (Wrist Rest) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center scroll-phase-2">
+            <div class="lg:col-span-6 space-y-6">
+                <div class="w-12 h-12 rounded-xl bg-violet-50 border border-violet-200 flex items-center justify-center text-accentViolet text-xl shadow-sm">
+                    <i class="fa-solid fa-hand-wrist"></i>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-bold text-techSlate">
+                    人體工學磁吸舒適手托
+                </h3>
+                <p class="text-techMuted leading-relaxed font-light">
+                    附贈符合手腕流線設計的人體工學手托，有效降低長時間打字與遊戲時的手腕壓力，讓您保持最高效穩定的操控姿態。
+                </p>
+                <ul class="space-y-3 text-sm text-techSlate font-medium">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentViolet"></i> 人體工學傾角，緩解手腕疲勞</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentViolet"></i> 可拆卸式設計，依桌面需求靈活配置</li>
+                </ul>
+            </div>
+            <div class="lg:col-span-6">
+                <div class="wireframe-card rounded-2xl bg-pureWhite border border-slate-200 p-3 shadow-lg hover:border-accentViolet/60 transition-all overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1541140590052-166d63327e45?q=80&w=1000&auto=format&fit=crop" 
+                         alt="人體工學磁吸手托" 
+                         class="w-full h-80 object-cover rounded-xl hover:scale-105 transition-transform duration-500"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/ffffff/0f172a?text=ERGONOMIC+WRIST+REST';">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Mechanical Switch Selection Section (Wireframe Style) -->
+    <section id="switches" class="py-28 bg-offWhite border-y border-slate-200 relative paper-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <div class="text-center space-y-3 max-w-2xl mx-auto">
+                <span class="text-xs font-mono text-accentIndigo tracking-widest uppercase">// CHOOSE YOUR SWITCH</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-techSlate">機械軸體規格選擇</h2>
+                <p class="text-techMuted text-sm font-mono">官方建議售價 NT$ 1,380</p>
+            </div>
+
+            <!-- Switch Cards Grid (Clean Minimalist Wireframe Style with Vector Switch Diagrams) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Blue Switch Card -->
+                <div class="wireframe-card gradient-border-box p-8 space-y-6 relative group shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-accentBlue font-bold text-lg">
+                                <i class="fa-solid fa-cubes"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-techSlate">青軸 (Blue Switch)</h3>
+                                <span class="text-xs font-mono text-techMuted">CLICKY & TACTILE</span>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 bg-blue-50 text-accentBlue text-xs font-mono rounded-full border border-blue-200">
+                            段落感強烈
+                        </span>
+                    </div>
+
+                    <!-- Exploded Diagram Display for Blue Switch (High Quality SVG) -->
+                    <div class="rounded-xl border border-slate-200 bg-pureWhite p-6 text-center flex flex-col items-center justify-center min-h-[220px]">
+                        <svg class="w-48 h-44 text-blue-600" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Switch Keycap Top -->
+                            <path d="M60 20 L140 20 L155 45 L45 45 Z" fill="#2563eb" fill-opacity="0.1" stroke="#2563eb" stroke-width="2" stroke-linejoin="round"/>
+                            <text x="100" y="36" font-family="sans-serif" font-size="10" font-weight="bold" fill="#2563eb" text-anchor="middle">KEYCAP</text>
+                            
+                            <!-- Switch Stem Cross Cut -->
+                            <rect x="85" y="45" width="30" height="35" rx="3" fill="#2563eb" fill-opacity="0.2" stroke="#2563eb" stroke-width="2"/>
+                            <path d="M100 50 L100 75 M90 62.5 L110 62.5" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+                            
+                            <!-- Tactical Click Slider -->
+                            <path d="M75 80 L125 80 L120 100 L80 100 Z" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+                            
+                            <!-- Spring -->
+                            <path d="M90 100 C 110 105, 110 110, 90 115 C 110 120, 110 125, 90 130" stroke="#64748b" stroke-width="2.5" fill="none"/>
+                            
+                            <!-- Switch Base Housing -->
+                            <path d="M40 130 L160 130 L145 165 L55 165 Z" fill="#f1f5f9" stroke="#0f172a" stroke-width="2"/>
+                            <!-- Metal Pins -->
+                            <line x1="80" y1="165" x2="80" y2="175" stroke="#0f172a" stroke-width="2.5"/>
+                            <line x1="120" y1="165" x2="120" y2="175" stroke="#0f172a" stroke-width="2.5"/>
+                        </svg>
+                        <span class="text-[10px] font-mono text-slate-400 mt-2">// BLUE CLICKY SWITCH STRUCTURE</span>
+                    </div>
+
+                    <p class="text-techMuted text-sm leading-relaxed">
+                        具備清晰強烈的「咔噠」聲與段落觸覺回饋，適合喜愛每一下敲擊皆有明確聲音響應與節奏感的玩家。
+                    </p>
+
+                    <div class="space-y-2 text-xs font-mono text-techSlate border-t border-slate-100 pt-4">
+                        <div class="flex justify-between"><span>觸發壓力 (Operating Force):</span><span class="font-bold">50g ± 10g</span></div>
+                        <div class="flex justify-between"><span>按鍵行程 (Travel Distance):</span><span class="font-bold">4.0mm</span></div>
+                        <div class="flex justify-between"><span>按鍵壽命 (Durability):</span><span class="font-bold">50,000,000 次</span></div>
+                    </div>
+
+                    <button class="w-full py-3.5 rounded-xl bg-techSlate hover:bg-accentIndigo text-white font-mono font-bold text-sm transition-all duration-300 shadow-md">
+                        選擇青軸 (NT$ 1,380)
+                    </button>
+                </div>
+
+                <!-- Red Switch Card -->
+                <div class="wireframe-card gradient-border-box p-8 space-y-6 relative group shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center text-red-600 font-bold text-lg">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-techSlate">紅軸 (Red Switch)</h3>
+                                <span class="text-xs font-mono text-techMuted">LINEAR & SILENT</span>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 bg-red-50 text-red-600 text-xs font-mono rounded-full border border-red-200">
+                            直上直下安靜
+                        </span>
+                    </div>
+
+                    <!-- Exploded Diagram Display for Red Switch (High Quality SVG) -->
+                    <div class="rounded-xl border border-slate-200 bg-pureWhite p-6 text-center flex flex-col items-center justify-center min-h-[220px]">
+                        <svg class="w-48 h-44 text-red-500" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Switch Keycap Top -->
+                            <path d="M60 20 L140 20 L155 45 L45 45 Z" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="2" stroke-linejoin="round"/>
+                            <text x="100" y="36" font-family="sans-serif" font-size="10" font-weight="bold" fill="#ef4444" text-anchor="middle">KEYCAP</text>
+                            
+                            <!-- Switch Stem Cross Cut -->
+                            <rect x="85" y="45" width="30" height="35" rx="3" fill="#ef4444" fill-opacity="0.2" stroke="#ef4444" stroke-width="2"/>
+                            <path d="M100 50 L100 75 M90 62.5 L110 62.5" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+                            
+                            <!-- Smooth Linear Slider (No Bump) -->
+                            <rect x="75" y="80" width="50" height="20" rx="2" fill="#ef4444" stroke="#ef4444" stroke-width="2"/>
+                            
+                            <!-- Spring -->
+                            <path d="M90 100 C 110 105, 110 110, 90 115 C 110 120, 110 125, 90 130" stroke="#64748b" stroke-width="2.5" fill="none"/>
+                            
+                            <!-- Switch Base Housing -->
+                            <path d="M40 130 L160 130 L145 165 L55 165 Z" fill="#f1f5f9" stroke="#0f172a" stroke-width="2"/>
+                            <!-- Metal Pins -->
+                            <line x1="80" y1="165" x2="80" y2="175" stroke="#0f172a" stroke-width="2.5"/>
+                            <line x1="120" y1="165" x2="120" y2="175" stroke="#0f172a" stroke-width="2.5"/>
+                        </svg>
+                        <span class="text-[10px] font-mono text-slate-400 mt-2">// RED LINEAR SWITCH STRUCTURE</span>
+                    </div>
+
+                    <p class="text-techMuted text-sm leading-relaxed">
+                        順暢無段落感，手感輕盈且敲擊聲音安靜。適合極速連續技能發放，與長時間打字不想打擾身旁夥伴的使用者。
+                    </p>
+
+                    <div class="space-y-2 text-xs font-mono text-techSlate border-t border-slate-100 pt-4">
+                        <div class="flex justify-between"><span>觸發壓力 (Operating Force):</span><span class="font-bold">45g ± 10g</span></div>
+                        <div class="flex justify-between"><span>按鍵行程 (Travel Distance):</span><span class="font-bold">4.0mm</span></div>
+                        <div class="flex justify-between"><span>按鍵壽命 (Durability):</span><span class="font-bold">50,000,000 次</span></div>
+                    </div>
+
+                    <button class="w-full py-3.5 rounded-xl bg-techSlate hover:bg-red-600 text-white font-mono font-bold text-sm transition-all duration-300 shadow-md">
+                        選擇紅軸 (NT$ 1,380)
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Large Final CTA Section with Micro-Animations -->
+    <section class="py-28 relative bg-pureWhite overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-8 scroll-phase-3">
+            
+            <span class="text-xs font-mono text-accentIndigo tracking-widest uppercase">// READY TO ELEVATE YOUR SETUP</span>
+
+            <h2 class="text-3xl sm:text-5xl font-black text-techSlate leading-tight">
+                開啟你的極簡高質感電競體驗
+            </h2>
+
+            <p class="text-techMuted max-w-lg mx-auto text-base font-light">
+                純白美學與強悍性能的完美結合。立即搶先體驗 FANTECH MK853 帶來的前所未有流暢觸感。
+            </p>
+            
+            <div class="pt-4">
+                <a href="#switches" class="inline-block px-12 py-5 rounded-2xl bg-techSlate hover:bg-accentIndigo text-white font-mono font-bold text-base tracking-wider shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transition-all duration-300">
+                    ORDER NOW ‧ NT$ 1,380
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Minimalist White Footer -->
+    <footer class="bg-offWhite border-t border-slate-200 py-12 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div class="flex items-center gap-3">
+                <span class="font-orbitron font-black text-lg text-techSlate">FANTECH</span>
+                <span class="text-xs font-mono text-techMuted">© 2026 FANTECH Taiwan. Minimalist Series.</span>
+            </div>
+
+            <div class="flex space-x-8 text-techMuted font-medium">
+                <a href="#hero" class="hover:text-accentIndigo transition-colors">首頁</a>
+                <a href="#banner" class="hover:text-accentIndigo transition-colors">極簡理念</a>
+                <a href="#features" class="hover:text-accentIndigo transition-colors">核心規格</a>
+                <a href="#switches" class="hover:text-accentIndigo transition-colors">軸體選購</a>
+            </div>
+
+            <div class="flex space-x-5 text-techMuted text-lg">
+                <a href="#" class="hover:text-accentIndigo transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-accentIndigo transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-accentIndigo transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // IntersectionObserver for Scroll Animations (Phases 1, 2, 3)
+            const scrollObserverOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.12
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('scroll-active');
+                    }
+                });
+            }, scrollObserverOptions);
+
+            const animatableElements = document.querySelectorAll('.scroll-phase-1, .scroll-phase-2, .scroll-phase-3');
+            animatableElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
